@@ -1,0 +1,64 @@
+###
+POST http://localhost:5000/api/create
+Content-Type: application/json
+
+# {
+#   "companyName": "Google",
+#   "jobTitle": "Frontend Intern",
+#   "jobType": "Internship",
+#   "status": "Applied",
+#   "appliedDate": "2026-06-19"
+# }
+
+# {
+#   "companyName": "Google",
+#   "jobTitle": "Backend Intern",
+#   "jobType": "Internship",
+#   "status": "Applied",
+#   "appliedDate": "2026-06-20"
+# }
+
+{
+  "companyName": "Microsoft",
+  "jobTitle": "Backend Developer",
+  "jobType": "Part_time",
+  "status": "Offer",
+  "appliedDate": "2026-06-19"
+}
+
+
+
+###
+##get all the job
+GET  http://localhost:5000/api/getJob
+
+
+### 
+##get job by status and jobType adn company name
+
+GET http://localhost:5000/api/getJobByTypeStatus?status=Applied
+
+###
+GET http://localhost:5000/api/getJobByTypeStatus?status=Offer
+
+###
+GET http://localhost:5000/api/getJobByTypeStatus?companyName=Google
+
+
+
+
+###
+##delete the job application
+
+DELETE http://localhost:5000/api/jobDelete/2e6a3942-954d-4b7d-af0c-c715c5d1a18b
+
+
+
+
+###update the application
+PATCH http://localhost:5000/api/updateJob/41ab817b-3e9d-448a-a832-ededdba5ee58
+Content-Type: application/json
+
+{
+  "status": "Interviewing"
+}
